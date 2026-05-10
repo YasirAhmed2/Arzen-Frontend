@@ -10,28 +10,28 @@
     --card-foreground: 230 60% 97%;
     --popover: 225 35% 6%;
     --popover-foreground: 230 60% 97%;
-    --primary: 220 100% 59%;
+    --primary: 180 100% 50%;
     --primary-foreground: 230 60% 97%;
     --secondary: 225 30% 8%;
     --secondary-foreground: 230 60% 97%;
     --muted: 225 20% 15%;
     --muted-foreground: 225 20% 70%;
-    --accent: 220 100% 59%;
+    --accent: 180 100% 50%;
     --accent-foreground: 230 60% 97%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 225 15% 15%;
     --input: 225 15% 15%;
-    --ring: 220 100% 59%;
+    --ring: 180 100% 50%;
     --radius: 0.625rem;
     --sidebar-background: 225 45% 3%;
     --sidebar-foreground: 230 60% 97%;
-    --sidebar-primary: 220 100% 59%;
+    --sidebar-primary: 180 100% 50%;
     --sidebar-primary-foreground: 230 60% 97%;
     --sidebar-accent: 225 30% 8%;
     --sidebar-accent-foreground: 230 60% 97%;
     --sidebar-border: 225 15% 15%;
-    --sidebar-ring: 220 100% 59%;
+    --sidebar-ring: 180 100% 50%;
   }
 }
 
@@ -61,14 +61,14 @@
   }
 
   ::selection {
-    background-color: rgba(46, 110, 255, 0.3);
+    background-color: rgba(0, 217, 255, 0.3);
     color: #F2F5FF;
   }
 
   /* Keep scrollbar visible so responsive testing in DevTools is easier. */
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(46, 110, 255, 0.65) rgba(255, 255, 255, 0.04);
+    scrollbar-color: rgba(0, 217, 255, 0.65) rgba(255, 255, 255, 0.04);
   }
 
   *::-webkit-scrollbar {
@@ -81,28 +81,28 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(46, 110, 255, 0.9), rgba(91, 143, 255, 0.75));
+    background: linear-gradient(180deg, rgba(0, 217, 255, 0.9), rgba(51, 233, 255, 0.75));
     border-radius: 999px;
     border: 2px solid rgba(5, 6, 11, 0.7);
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgba(46, 110, 255, 1), rgba(91, 143, 255, 0.9));
+    background: linear-gradient(180deg, rgba(0, 217, 255, 1), rgba(51, 233, 255, 0.9));
   }
 }
 
 @layer components {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #2E6EFF 0%, #5B8FFF 100%);
+    background-image: linear-gradient(135deg, #00D9FF 0%, #33E9FF 100%);
   }
 
   .glow-accent {
-    box-shadow: 0 0 30px rgba(46, 110, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
   }
   
   .border-glow {
-    box-shadow: 0 0 0 1px rgba(46, 110, 255, 0.3);
+    box-shadow: 0 0 0 1px rgba(0, 217, 255, 0.3);
   }
   
   .card-cyber {

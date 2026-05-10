@@ -52,7 +52,7 @@ module.exports = {
         arzens: {
           bg: '#05060B',
           'bg-secondary': '#0B0E1A',
-          accent: '#2E6EFF',
+          accent: '#00D9FF',
           text: '#F2F5FF',
           'text-muted': '#A7B1D8',
         }

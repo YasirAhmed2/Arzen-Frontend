@@ -83,10 +83,15 @@ export default function Hero() {
       className="relative w-full min-h-screen md:h-screen overflow-hidden z-10"
     >
       {/* Background Image */}
-      <div ref={bgRef} className="absolute inset-0 w-full h-full">
-        <img src="/hero-eagle.jpg" alt="Cyber Eagle" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-arzens-bg/90 via-arzens-bg/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-transparent to-arzens-bg/30" />
+      <div ref={bgRef} className="absolute inset-0 w-full h-full overflow-hidden">
+        <img 
+          src="/hero.jpeg" 
+          alt="Cyber Eagle" 
+          className="w-full h-full object-cover object-center select-none pointer-events-none" 
+          style={{ backfaceVisibility: 'hidden' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-arzens-bg/85 via-arzens-bg/50 to-arzens-bg/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg/90 via-transparent to-transparent" />
       </div>
 
       {/* Content */}

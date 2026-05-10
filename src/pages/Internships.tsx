@@ -80,7 +80,7 @@ export default function Internships() {
           position: absolute;
           width: ${size}px;
           height: ${size}px;
-          background: rgba(46, 110, 255, ${Math.random() * 0.4 + 0.1});
+          background: rgba(0, 217, 255, ${Math.random() * 0.4 + 0.1});
           border-radius: 50%;
           left: ${Math.random() * 100}%;
           top: ${Math.random() * 100}%;
@@ -116,15 +116,15 @@ export default function Internships() {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
           style={{
             background:
-              'radial-gradient(circle, rgba(46,110,255,0.08) 0%, rgba(46,110,255,0.02) 40%, transparent 70%)',
+              'radial-gradient(circle, rgba(0,217,255,0.08) 0%, rgba(0,217,255,0.02) 40%, transparent 70%)',
           }}
         />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `linear-gradient(rgba(46,110,255,0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(46,110,255,0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(0,217,255,0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,217,255,0.3) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />

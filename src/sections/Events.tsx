@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Users, Building2, Mic, Trophy, Calendar, Globe, BarChart3 } from 'lucide-react';
+import { Trophy, Calendar, Globe, BarChart3, ExternalLink, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,8 +18,7 @@ export default function Events() {
 
     if (!section || !header || !cards) return;
 
-    const leftCard = cards.querySelector('.event-card-left');
-    const rightCard = cards.querySelector('.event-card-right');
+    const eventCards = cards.querySelectorAll('.event-card');
 
     const ctx = gsap.context(() => {
       gsap.fromTo(header,
@@ -38,39 +37,25 @@ export default function Events() {
         }
       );
 
-      gsap.fromTo(leftCard,
-        { x: -60, opacity: 0, scale: 0.98 },
-        {
-          x: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cards,
-            start: 'top 75%',
-            end: 'top 40%',
-            scrub: 0.4,
+      eventCards.forEach((card, index) => {
+        const offset = (index - 1) * 60;
+        gsap.fromTo(card,
+          { x: offset, opacity: 0, scale: 0.98 },
+          {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: cards,
+              start: 'top 75%',
+              end: 'top 40%',
+              scrub: 0.4,
+            }
           }
-        }
-      );
-
-      gsap.fromTo(rightCard,
-        { x: 60, opacity: 0, scale: 0.98 },
-        {
-          x: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cards,
-            start: 'top 75%',
-            end: 'top 40%',
-            scrub: 0.4,
-          }
-        }
-      );
+        );
+      });
     }, section);
 
     return () => ctx.revert();
@@ -95,115 +80,118 @@ export default function Events() {
 
         <div
           ref={cardsRef}
-          className="grid md:grid-cols-2 gap-6 md:gap-8"
+          className="grid md:grid-cols-3 gap-6 md:gap-6"
         >
-          <div className="event-card-left group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300">
+          {/* Air Hackathon */}
+          <div className="event-card group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300 cursor-pointer" onClick={() => window.open('https://forms.gle/VtPUBCBJzJRVCa1L6', '_blank')}>
             <div className="absolute inset-0">
-              <img src="/hero-eagle.jpg" alt="Convention" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
+              <img src="/hero.jpeg" alt="Air Hackathon" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-arzens-bg/80 to-transparent" />
             </div>
 
-            <div className="relative z-10 p-6 md:p-8">
-              <div className="mb-6">
-                <span className="label-mono text-arzens-accent">FLAGSHIP EVENT</span>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-arzens-text mt-2">
-                  ARZENS Convention 2026
+            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between">
+              <div className="mb-4">
+                <span className="label-mono text-arzens-accent">HACKATHON</span>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-arzens-text mt-2">
+                  Air Hackathon
                 </h3>
-                <p className="text-arzens-text-muted mt-2">
-                  The Cybersecurity Awakening
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-3">
-                  <Users className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">1000+</span>
-                    <span className="text-xs text-arzens-text-muted">Participants</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Building2 className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">20+</span>
-                    <span className="text-xs text-arzens-text-muted">Universities</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mic className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">10+</span>
-                    <span className="text-xs text-arzens-text-muted">Industry Speakers</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Trophy className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">PKR 100K</span>
-                    <span className="text-xs text-arzens-text-muted">CTF Prize Pool</span>
-                  </div>
+                <div className="flex items-center gap-2 mt-2 text-sm text-arzens-text-muted">
+                  <MapPin className="w-4 h-4 text-arzens-accent" />
+                  <span>Air University Islamabad</span>
                 </div>
               </div>
 
-              <Button className="bg-arzens-accent hover:bg-arzens-accent/90 text-white font-mono type-scale-button uppercase tracking-wider">
-                View Convention
+              <Button 
+                className="bg-arzens-accent hover:bg-arzens-accent/90 text-white font-mono type-scale-button uppercase tracking-wider w-full flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open('https://forms.gle/VtPUBCBJzJRVCa1L6', '_blank');
+                }}
+              >
+                <ExternalLink className="w-4 h-4" />
+                Register Now
               </Button>
             </div>
           </div>
 
-          <div className="event-card-right group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300">
+          {/* BlackByt3 Convention */}
+          <div className="event-card group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300 cursor-pointer" onClick={() => window.open('https://tally.so/r/XxYKGj', '_blank')}>
             <div className="absolute inset-0">
-              <img src="/hero-eagle.jpg" alt="CTF Arena" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity scale-x-[-1]" />
+              <img src="/hero.jpeg" alt="BlackByt3 Convention" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-arzens-bg/80 to-transparent" />
             </div>
 
-            <div className="relative z-10 p-6 md:p-8">
-              <div className="mb-6">
-                <span className="label-mono text-arzens-accent">WEEKLY COMPETITION</span>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-arzens-text mt-2">
-                  CTF Arena
+            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between">
+              <div className="mb-4">
+                <span className="label-mono text-arzens-accent">CTF COMPETITION</span>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-arzens-text mt-2">
+                  BlackByt3 Convention
                 </h3>
-                <p className="text-arzens-text-muted mt-2">
-                  Compete. Learn. Dominate.
+                <p className="text-arzens-text-muted mt-2 text-sm">
+                  Online CTF Challenge
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">Weekly</span>
-                    <span className="text-xs text-arzens-text-muted">Challenges</span>
-                  </div>
+              <div className="space-y-2 mb-4 text-xs text-arzens-text-muted">
+                <div className="flex justify-between">
+                  <span>Fee:</span>
+                  <span className="font-heading">PKR 1600</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">Global</span>
-                    <span className="text-xs text-arzens-text-muted">Leaderboard</span>
-                  </div>
+                <div className="flex justify-between">
+                  <span>Prize Pool:</span>
+                  <span className="font-heading">PKR 70,000</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <BarChart3 className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">All Levels</span>
-                    <span className="text-xs text-arzens-text-muted">Beginner to Advanced</span>
-                  </div>
+                <div className="flex justify-between">
+                  <span>Promo Code:</span>
+                  <span className="font-heading text-arzens-accent">THE ARZENS</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Trophy className="w-5 h-5 text-arzens-accent" />
-                  <div>
-                    <span className="block text-lg font-heading font-bold text-arzens-text">Rewards</span>
-                    <span className="text-xs text-arzens-text-muted">Badges & Certificates</span>
-                  </div>
+                <div className="flex justify-between">
+                  <span>Discount:</span>
+                  <span className="font-heading">Rs. 600 OFF</span>
                 </div>
               </div>
 
-              <Button
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/5 font-mono type-scale-button uppercase tracking-wider"
+              <Button 
+                className="bg-arzens-accent hover:bg-arzens-accent/90 text-white font-mono type-scale-button uppercase tracking-wider w-full flex items-center justify-center gap-2 text-xs"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open('https://tally.so/r/XxYKGj', '_blank');
+                }}
               >
-                Enter Arena
+                <ExternalLink className="w-4 h-4" />
+                Register CTF
+              </Button>
+            </div>
+          </div>
+
+          {/* KheloCTF */}
+          <div className="event-card group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300 cursor-pointer" onClick={() => window.open('https://www.kheloctf.com', '_blank')}>
+            <div className="absolute inset-0">
+              <img src="/hero.jpeg" alt="KheloCTF" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-arzens-bg/80 to-transparent" />
+            </div>
+
+            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between">
+              <div className="mb-4">
+                <span className="label-mono text-arzens-accent">GLOBAL CTF</span>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-arzens-text mt-2">
+                  KheloCTF
+                </h3>
+                <div className="flex items-center gap-2 mt-2 text-sm text-arzens-text-muted">
+                  <Globe className="w-4 h-4 text-arzens-accent" />
+                  <span>Held Online</span>
+                </div>
+              </div>
+
+              <Button 
+                className="bg-arzens-accent hover:bg-arzens-accent/90 text-white font-mono type-scale-button uppercase tracking-wider w-full flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open('https://www.kheloctf.com', '_blank');
+                }}
+              >
+                <ExternalLink className="w-4 h-4" />
+                Register Now
               </Button>
             </div>
           </div>
