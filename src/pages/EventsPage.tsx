@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowUpRight, MapPin, Sparkles, Ticket, Globe } from 'lucide-react'
+import { ArrowUpRight, MapPin, Sparkles, Ticket, Trophy, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 gsap.registerPlugin(ScrollTrigger)
