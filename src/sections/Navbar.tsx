@@ -10,7 +10,6 @@ const navLinks = [
   { label: 'Events', href: '/events', externalPage: true },
   { label: 'Ambassador', href: '/ambassador', externalPage: true },
   { label: 'Internships', href: '/internships', externalPage: true },
-  { label: 'Admin', href: '/admin', externalPage: true },
   { label: 'Contact', href: '#contact' },
 ];
 
