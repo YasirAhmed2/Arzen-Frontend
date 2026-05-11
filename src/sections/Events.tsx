@@ -85,18 +85,19 @@ export default function Events() {
           {/* Air Hackathon */}
           <div className="event-card group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300 cursor-pointer" onClick={() => window.open('https://forms.gle/VtPUBCBJzJRVCa1L6', '_blank')}>
             <div className="absolute inset-0">
-              <img src="/hero.jpeg" alt="Air Hackathon" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
-              <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-arzens-bg/80 to-transparent" />
+              <img src="/images/airHackathon.jpeg" alt="Air Hackathon" className="w-full h-full object-cover blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-b from-arzens-bg/80 via-arzens-bg/70 to-arzens-bg" />
             </div>
 
-            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between">
-              <div className="mb-4">
-                <span className="label-mono text-arzens-accent">HACKATHON</span>
+            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between min-h-96">
+              <div className="mb-4 flex flex-col items-center text-center">
+                <img src="/images/airHackathon.jpeg" alt="Air Hackathon Logo" className="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover mb-4 border border-arzens-accent/30" />
+                <span className="label-mono text-arzens-accent text-xs md:text-sm">HACKATHON</span>
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-arzens-text mt-2">
                   Air Hackathon
                 </h3>
-                <div className="flex items-center gap-2 mt-2 text-sm text-arzens-text-muted">
-                  <MapPin className="w-4 h-4 text-arzens-accent" />
+                <div className="flex items-center gap-2 mt-3 text-xs md:text-sm text-arzens-text-muted justify-center">
+                  <MapPin className="w-4 h-4 text-arzens-accent flex-shrink-0" />
                   <span>Air University Islamabad</span>
                 </div>
               </div>
@@ -117,17 +118,18 @@ export default function Events() {
           {/* BlackByt3 Convention */}
           <div className="event-card group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300 cursor-pointer" onClick={() => window.open('https://tally.so/r/XxYKGj', '_blank')}>
             <div className="absolute inset-0">
-              <img src="/hero.jpeg" alt="BlackByt3 Convention" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
-              <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-arzens-bg/80 to-transparent" />
+              <img src="/images/blackByte.png" alt="BlackByt3 Convention" className="w-full h-full object-cover blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-b from-arzens-bg/80 via-arzens-bg/70 to-arzens-bg" />
             </div>
 
-            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between">
-              <div className="mb-4">
-                <span className="label-mono text-arzens-accent">CTF COMPETITION</span>
+            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between min-h-96">
+              <div className="mb-4 flex flex-col items-center text-center">
+                <img src="/images/blackByte.png" alt="BlackByt3 Logo" className="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover mb-4 border border-arzens-accent/30" />
+                <span className="label-mono text-arzens-accent text-xs md:text-sm">CTF COMPETITION</span>
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-arzens-text mt-2">
                   BlackByt3 Convention
                 </h3>
-                <p className="text-arzens-text-muted mt-2 text-sm">
+                <p className="text-arzens-text-muted mt-2 text-xs md:text-sm">
                   Online CTF Challenge
                 </p>
               </div>
@@ -167,18 +169,19 @@ export default function Events() {
           {/* KheloCTF */}
           <div className="event-card group relative rounded-lg overflow-hidden border border-white/10 hover:border-arzens-accent/40 transition-all duration-300 cursor-pointer" onClick={() => window.open('https://www.kheloctf.com', '_blank')}>
             <div className="absolute inset-0">
-              <img src="/hero.jpeg" alt="KheloCTF" className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity" />
-              <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg via-arzens-bg/80 to-transparent" />
+              <img src="/images/kheloCTF.png" alt="KheloCTF" className="w-full h-full object-cover blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-b from-arzens-bg/80 via-arzens-bg/70 to-arzens-bg" />
             </div>
 
-            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between">
-              <div className="mb-4">
-                <span className="label-mono text-arzens-accent">GLOBAL CTF</span>
+            <div className="relative z-10 p-6 md:p-6 h-full flex flex-col justify-between min-h-96">
+              <div className="mb-4 flex flex-col items-center text-center">
+                <img src="/images/kheloCTF.png" alt="KheloCTF Logo" className="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover mb-4 border border-arzens-accent/30" />
+                <span className="label-mono text-arzens-accent text-xs md:text-sm">GLOBAL CTF</span>
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-arzens-text mt-2">
                   KheloCTF
                 </h3>
-                <div className="flex items-center gap-2 mt-2 text-sm text-arzens-text-muted">
-                  <Globe className="w-4 h-4 text-arzens-accent" />
+                <div className="flex items-center gap-2 mt-3 text-xs md:text-sm text-arzens-text-muted justify-center">
+                  <Globe className="w-4 h-4 text-arzens-accent flex-shrink-0" />
                   <span>Held Online</span>
                 </div>
               </div>

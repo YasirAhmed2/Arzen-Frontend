@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Team', href: '#team' },
-  { label: 'Events', href: '/events', externalPage: true },
+  { label: 'Events', href: '#events' },
   { label: 'Ambassador', href: '/ambassador', externalPage: true },
   { label: 'Internships', href: '/internships', externalPage: true },
   { label: 'Contact', href: '#contact' },
