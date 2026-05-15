@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Linkedin, Github, Twitter, Upload, Star, Users, Award, ShieldCheck } from 'lucide-react';
+import { Linkedin, Github, Twitter, Instagram, Upload, Star, Users, Award, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,36 +11,76 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ambassadors = [
   {
-    name: 'Ahmad Khan',
+    name: 'Farhan Ali',
     university: 'FAST NUCES',
     city: 'Islamabad',
-    role: 'Lead Ambassador',
+    role: 'Campus Ambassador',
     bio: 'Cybersecurity enthusiast with a passion for ethical hacking and community building.',
-    socials: { linkedin: '#', github: '#', twitter: '#' },
+    socials: { linkedin: 'https://www.linkedin.com/in/farhan-ali-7a60853a3?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/kloidx0', twitter: '', instagram: 'https://www.instagram.com/farhannallii' },
   },
   {
-    name: 'Sara Malik',
-    university: 'NUST',
+    name: 'Zara Fatima',
+    university: 'International Islamic University',
     city: 'Islamabad',
     role: 'Campus Ambassador',
-    bio: 'AI and security researcher working on innovative threat detection solutions.',
-    socials: { linkedin: '#', github: '#', twitter: '#' },
+    bio: 'Cybersecurity specialist focused on innovative threat detection and digital defense.',
+    socials: { linkedin: 'https://www.linkedin.com/in/zara-fatima-6775163bb?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/nightmare86-bit', twitter: '', instagram: 'https://www.instagram.com/thedarkesthaloz?igsh=bWNjemZxb2R5aHlp' },
   },
   {
-    name: 'Usman Ali',
-    university: 'UET Lahore',
-    city: 'Lahore',
+    name: 'Wajeeh Ul Hassan',
+    university: 'Pak-Austria Fachhochschule',
+    city: 'Islamabad',
     role: 'Campus Ambassador',
-    bio: 'Full-stack developer with expertise in secure web application development.',
-    socials: { linkedin: '#', github: '#', twitter: '#' },
+    bio: 'Cybersecurity professional with expertise in applied security solutions.',
+    socials: { linkedin: 'https://www.linkedin.com/in/wajeeh-ul-hassan-963091319?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/wajeehulhassan990', twitter: '', instagram: 'https://www.instagram.com/wajeeh_ul_hassan1?igsh=cW10aTR0MDhhc2sx' },
   },
   {
-    name: 'Fatima Zahra',
-    university: 'IBA Karachi',
+    name: 'Hafsa Kanwal',
+    university: 'Emerson University',
+    city: 'Multan',
+    role: 'Campus Ambassador',
+    bio: 'Certified Ethical Hacker with a strong background in BS Cyber Security.',
+    socials: { linkedin: 'https://www.linkedin.com/in/hafsa-iqbal-javed-4516ba376?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: '', twitter: '', instagram: 'https://www.instagram.com/hafsaiqbaljaved' },
+  },
+  {
+    name: 'Malaika Asif',
+    university: 'Comsats University',
+    city: 'Islamabad',
+    role: 'Campus Ambassador',
+    bio: 'Cybersecurity enthusiast dedicated to building a secure digital ecosystem.',
+    socials: { linkedin: 'https://www.linkedin.com/in/malaika-asif-16354039a?utm_source=share_via&utm_content=profile&utm_medium=member_ios', github: 'https://github.com/Malaika-Asif-hack', twitter: '', instagram: 'https://www.instagram.com/me_malaika18?igsh=MXZwNXE0bGRhM3JpNw==' },
+  },
+  {
+    name: 'Sawera Ishfaq',
+    university: 'International Islamic University',
+    city: 'Islamabad',
+    role: 'Campus Ambassador',
+    bio: 'Cybersecurity researcher focused on secure infrastructure and threat analysis.',
+    socials: { linkedin: 'https://www.linkedin.com/in/sawera-ishfaq-aa285a369?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/saweraishfaqs7', twitter: '', instagram: '' },
+  },
+  {
+    name: 'Rabia Irfan',
+    university: 'CUST',
     city: 'Karachi',
     role: 'Campus Ambassador',
-    bio: 'Data science enthusiast focused on security analytics and threat intelligence.',
-    socials: { linkedin: '#', github: '#', twitter: '#' },
+    bio: 'Software engineering student with a focus on secure application development.',
+    socials: { linkedin: 'https://www.linkedin.com/in/rabia-irfan', github: 'https://github.com/Biya-6553', twitter: '', instagram: 'https://www.instagram.com/_biya_21?igsh=MTE1dGFtNDUxNWo5Mg==' },
+  },
+  {
+    name: 'Albash Ahmed',
+    university: 'University of Wah',
+    city: 'Wah',
+    role: 'Campus Ambassador',
+    bio: 'Cybersecurity specialist passionate about offensive security and penetration testing.',
+    socials: { linkedin: 'https://www.linkedin.com/in/albash-ahmed', github: 'https://github.com/Albash-ahmed/', twitter: '', instagram: 'https://www.instagram.com/mr_albash_?igsh=MWJid2JxM21vbWE1dw==' },
+  },
+  {
+    name: 'Haleema Sadia',
+    university: 'Emerson University',
+    city: 'Multan',
+    role: 'Campus Ambassador',
+    bio: 'Cybersecurity professional with expertise in network security and defense strategies.',
+    socials: { linkedin: 'https://www.linkedin.com/in/haleema-sadia-825a82360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', github: '', twitter: 'https://x.com/sadiaaaa_123456', instagram: '' },
   },
 ];
 
@@ -155,15 +195,26 @@ export default function Ambassador() {
                 <p className="text-xs text-arzens-text-muted mb-3">{amb.city}</p>
                 <p className="text-sm text-arzens-text-muted leading-relaxed mb-4">{amb.bio}</p>
                 <div className="flex gap-2">
-                  <a href={amb.socials.linkedin} className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
-                    <Linkedin className="w-4 h-4 text-arzens-text-muted" />
-                  </a>
-                  <a href={amb.socials.github} className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
-                    <Github className="w-4 h-4 text-arzens-text-muted" />
-                  </a>
-                  <a href={amb.socials.twitter} className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
-                    <Twitter className="w-4 h-4 text-arzens-text-muted" />
-                  </a>
+                  {amb.socials.linkedin && (
+                    <a href={amb.socials.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
+                      <Linkedin className="w-4 h-4 text-arzens-text-muted hover:text-arzens-accent" />
+                    </a>
+                  )}
+                  {amb.socials.github && (
+                    <a href={amb.socials.github} target="_blank" rel="noopener noreferrer" title="GitHub" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
+                      <Github className="w-4 h-4 text-arzens-text-muted hover:text-arzens-accent" />
+                    </a>
+                  )}
+                  {amb.socials.twitter && (
+                    <a href={amb.socials.twitter} target="_blank" rel="noopener noreferrer" title="Twitter" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
+                      <Twitter className="w-4 h-4 text-arzens-text-muted hover:text-arzens-accent" />
+                    </a>
+                  )}
+                  {amb.socials.instagram && (
+                    <a href={amb.socials.instagram} target="_blank" rel="noopener noreferrer" title="Instagram" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-arzens-accent/20 transition-colors">
+                      <Instagram className="w-4 h-4 text-arzens-text-muted hover:text-arzens-accent" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
