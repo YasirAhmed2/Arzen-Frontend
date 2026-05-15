@@ -82,14 +82,19 @@ export default function Hero() {
       ref={sectionRef}
       className="relative w-full min-h-screen md:h-screen overflow-hidden z-10"
     >
-      {/* Background Image */}
+      {/* Background Image (WebP with JPEG fallback) */}
       <div ref={bgRef} className="absolute inset-0 w-full h-full overflow-hidden">
-        <img 
-          src="/hero.jpeg" 
-          alt="Cyber Eagle" 
-          className="w-full h-full object-cover object-center select-none pointer-events-none" 
-          style={{ backfaceVisibility: 'hidden' }}
-        />
+        <picture>
+          <source srcSet="/hero.webp" type="image/webp" />
+          <img
+            src="/hero.jpeg"
+            alt="Hero background"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            style={{ backfaceVisibility: 'hidden' }}
+            loading="lazy"
+          />
+        </picture>
+
         <div className="absolute inset-0 bg-gradient-to-r from-arzens-bg/85 via-arzens-bg/50 to-arzens-bg/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-arzens-bg/90 via-transparent to-transparent" />
       </div>
