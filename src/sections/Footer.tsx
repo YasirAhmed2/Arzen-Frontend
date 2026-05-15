@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send } from 'lucide-react';
+import { ExternalLink, Send } from 'lucide-react';
 import CookiePolicyModal from '@/components/CookiePolicyModal';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -27,6 +27,13 @@ const programs = [
   { label: 'Events', href: '/events', externalPage: true },
   { label: 'Team', href: '#team' },
   { label: 'Services', href: '#services' },
+];
+
+const socialLinks = [
+  { label: 'Discord', href: 'https://discord.gg/ccVwK3eDp', description: 'Community hub' },
+  { label: 'Instagram', href: 'https://www.instagram.com/the_arzens_official/', description: 'Visual updates' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/the-arzens/?viewAsMember=true', description: 'Company page' },
+  { label: 'WhatsApp', href: 'https://chat.whatsapp.com/FiQJ0MHgjvbI1ng9UcQ4O2', description: 'Announcements' },
 ];
 
 export default function Footer() {
@@ -186,6 +193,35 @@ export default function Footer() {
                 <span className="text-arzens-text-muted text-sm">Pakistan</span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div className="footer-column mb-12 rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+            <div>
+              <span className="label-mono block mb-2">OFFICIAL SOCIALS</span>
+              <p className="text-sm text-arzens-text-muted max-w-2xl">
+                Follow The Arzens across our verified channels for updates, community drops, and official announcements.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open The Arzens ${social.label}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-arzens-bg-secondary px-3.5 py-2 text-sm text-arzens-text-muted transition-all hover:border-arzens-accent/40 hover:bg-arzens-accent/10 hover:text-arzens-text"
+                >
+                  <span className="flex flex-col leading-tight">
+                    <span className="font-medium text-arzens-text">{social.label}</span>
+                    <span className="text-[11px] text-arzens-text-muted">{social.description}</span>
+                  </span>
+                  <ExternalLink className="h-4 w-4 text-arzens-accent" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
