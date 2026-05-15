@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Send, Discord, Instagram, Linkedin, MessageCircle } from 'lucide-react';
+import { Send, MessageSquare, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 import CookiePolicyModal from '@/components/CookiePolicyModal';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -30,7 +30,7 @@ const programs = [
 ];
 
 const socialLinks = [
-  { label: 'Discord', href: 'https://discord.gg/ccVwK3eDp', icon: Discord },
+  { label: 'Discord', href: 'https://discord.gg/ccVwK3eDp', icon: MessageSquare },
   { label: 'Instagram', href: 'https://www.instagram.com/the_arzens_official/', icon: Instagram },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/the-arzens/?viewAsMember=true', icon: Linkedin },
   { label: 'WhatsApp', href: 'https://chat.whatsapp.com/FiQJ0MHgjvbI1ng9UcQ4O2', icon: MessageCircle },
