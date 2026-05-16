@@ -61,7 +61,7 @@ const ambassadors = [
   {
     name: 'Rabia Irfan',
     university: 'CUST',
-    city: 'Karachi',
+    city: 'Islamabad',
     role: 'Campus Ambassador',
     bio: 'Software engineering student with a focus on secure application development.',
     socials: { linkedin: 'https://www.linkedin.com/in/rabia-irfan', github: 'https://github.com/Biya-6553', twitter: '', instagram: 'https://www.instagram.com/_biya_21?igsh=MTE1dGFtNDUxNWo5Mg==' },

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, MessageSquare, Instagram, Linkedin, MessageCircle } from 'lucide-react';
+import { Send } from 'lucide-react';
+import { FaDiscord, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import CookiePolicyModal from '@/components/CookiePolicyModal';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -30,10 +31,10 @@ const programs = [
 ];
 
 const socialLinks = [
-  { label: 'Discord', href: 'https://discord.gg/ccVwK3eDp', icon: MessageSquare },
-  { label: 'Instagram', href: 'https://www.instagram.com/the_arzens_official/', icon: Instagram },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/the-arzens/?viewAsMember=true', icon: Linkedin },
-  { label: 'WhatsApp', href: 'https://chat.whatsapp.com/FiQJ0MHgjvbI1ng9UcQ4O2', icon: MessageCircle },
+  { label: 'Discord', href: 'https://discord.gg/ccVwK3eDp', icon: FaDiscord, color: '#5865F2', hoverColor: '#4752C4' },
+  { label: 'Instagram', href: 'https://www.instagram.com/the_arzens_official/', icon: FaInstagram, color: '#E4405F', hoverColor: '#C13584' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/the-arzens/?viewAsMember=true', icon: FaLinkedinIn, color: '#0A66C2', hoverColor: '#084591' },
+  { label: 'WhatsApp', href: 'https://chat.whatsapp.com/FiQJ0MHgjvbI1ng9UcQ4O2', icon: FaWhatsapp, color: '#25D366', hoverColor: '#1EA855' },
 ];
 
 export default function Footer() {
@@ -215,7 +216,19 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     aria-label={`Open The Arzens ${social.label}`}
                     title={social.label}
-                    className="w-10 h-10 rounded-lg border border-white/10 bg-arzens-bg-secondary flex items-center justify-center text-arzens-text-muted transition-all hover:border-arzens-accent/40 hover:bg-arzens-accent/20 hover:text-arzens-accent"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110"
+                    style={{
+                      backgroundColor: social.color,
+                      color: 'white',
+                    }}
+                    onMouseEnter={(e) => {
+                      const target = e.currentTarget as HTMLAnchorElement;
+                      target.style.backgroundColor = social.hoverColor;
+                    }}
+                    onMouseLeave={(e) => {
+                      const target = e.currentTarget as HTMLAnchorElement;
+                      target.style.backgroundColor = social.color;
+                    }}
                   >
                     <IconComponent className="h-5 w-5" />
                   </a>
